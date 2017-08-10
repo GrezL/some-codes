@@ -1,0 +1,11 @@
+FROM medword_base:latest
+MAINTAINER grezlu@gmail.com
+
+ENV PATH="$PATH:/usr/bin"
+
+COPY ./MedWord /MedWord
+
+COPY requirements.txt /MedWord/
+
+WORKDIR /MedWord
+CMD supervisord -c supervisor.conf && bash

@@ -1,0 +1,21 @@
+version: '2'
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: dockerlibrary/mysql_Dockerfile
+    ports:
+      - 3306:3306
+    container_name: mysql  
+    tty: true
+    network_mode: "host"
+  serv:
+    build:
+      context: .
+      dockerfile: dockerlibrary/serv_Dockerfile
+    ports:
+      - 6800:6800
+      - 2170:2170
+    container_name: serv 
+    tty: true
+    network_mode: "host"

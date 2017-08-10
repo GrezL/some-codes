@@ -1,0 +1,10 @@
+*.pyc
+*.log
+*.err
+.DS_Store
+*build/
+*~
+*.egg-info/
+*eggs/
+*dbs/
+*.pid

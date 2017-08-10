@@ -1,0 +1,8 @@
+FROM medword_base:latest 
+
+# setup our entry point
+ADD dockerlibrary/init.sh /init.sh
+RUN chmod 755 /*.sh
+
+EXPOSE 3306
+CMD service mysql start && ./init.sh && bash
