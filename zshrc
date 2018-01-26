@@ -5,7 +5,7 @@ export ZSH=/Users/grezl/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="sammy"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -107,5 +107,15 @@ export DOCKER_MACHINE_NAME="default"
 alias mongostart="mongod --dbpath=data/db --fork --logpath=log/mongodb.log --replSet "rs0" "
 
 # Duotai proxy
-alias pon='export http_proxy=http://duotai:pRF1vtCj3u@westin.h.timonit.cn:10697;export https_proxy=$http_proxy' 
+alias pon='export http_proxy=http://duotai:7TDG69Djic@conrad.h.timonit.cn:16617;export https_proxy=$http_proxy' 
 alias poff='unset http_proxy;unset https_proxy'
+
+export GO15VENDOREXPERIMENT=1
+export GOPATH=/usr/local/go
+export GOBIN=$GOPATH/bin
+export PATH="$PATH:$GO15VENDOREXPERIMENT:$GOBIN"
+
+function goinit() {
+    mkdir -p src bin pkg
+    export GOPATH=$PWD
+}

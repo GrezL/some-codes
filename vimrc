@@ -12,7 +12,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdcommenter'
 Bundle 'Blackrush/vim-gocode'
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/bundle/gocode/vim/symlink.sh' }
 Plugin 'fatih/vim-go'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'SirVer/ultisnips'
