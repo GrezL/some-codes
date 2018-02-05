@@ -1,31 +1,25 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "fmt"
 
 func main() {
 	ch := make(chan string)
+	strList := []string{"Washington", "Tripoli", "London", "Beijing", "Tokio"}
 
-	go sendData(ch)
+	for _, loc := range strList {
+		go sendData(ch, loc)
+		fmt.Println(loc)
+	}
 	go getData(ch)
-
-	time.Sleep(1e9)
 }
 
-func sendData(ch chan string) {
-	ch <- "Washingtone"
-	ch <- "Tripoli"
-	ch <- "London"
-	ch <- "Beijing"
-	ch <- "Tokio"
+func sendData(ch chan string, loc string) {
+	ch <- loc
 }
 
 func getData(ch chan string) {
-	var input string
 	for {
-		input = <-ch
-		fmt.Printf("%s ", input)
+		input := <-ch
+		fmt.Printf("%s", input)
 	}
 }
